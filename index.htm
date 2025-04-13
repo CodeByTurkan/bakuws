@@ -1,0 +1,152 @@
+<!-- npx @tailwindcss/cli -i input.css -o output.css --watch -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ </head>
+ <style>
+    
+    html,
+    #swiper {
+      position: relative;
+      height: 100%;
+    }
+
+    #swiper {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper{
+      width: 90%;
+      height: 60%;
+      border-radius: 3%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 70vh;
+      /* vh  for picture % for div */
+      object-fit: cover;
+    }
+    
+    #ads img{
+        height: 70vh;
+        border-radius: 3%;
+    }
+    
+  </style>
+ </style>
+ <body>
+    <!-- header -->
+     <header>
+        <div class="bg-[#FFD525] ">
+            <nav class="mx-auto  min-[1020px]:w-[85%] flex items-center justify-between p-3">
+                <!-- left navbar -->
+                <div class="flex items-center">
+                    <img class="max-w-full max-[1000px]:h-[24px]" src="img/logo.svg" alt="">
+                    <!-- max olanda 1000den asagi tetbiq olunur, min olanda yazilan eddeden yuxari -->
+                    <img class="max-w-full h-[35px] ml-[10px]"  src="img/xb64.webp" alt="">
+                </div>
+                <!-- right navbar -->
+                <div class="flex justify-between items-center">
+                    <i class="fa-solid fa-magnifying-glass m-4 fa-xl "></i>
+                    <i class="fa-regular fa-moon fa-xl"></i>  
+                    <!-- font aswesome icon size bigger - fa-xl -->
+                    <select class="m-4" name="" id=""><option>AZ</option></select>
+                    <div class="flex min-[770px]:hidden"><i class="fa-solid fa-bars fa-xl mr-4"></i></div>
+                    <div>
+                        <ul class="hidden min-[770px]:flex justify-between items-center">
+                            <li><a href=""><i class="fa-brands fa-facebook bg-white/60 text-black/70 p-2 rounded-full mr-4 "></i></a></li>
+                            <!-- tailwindde text-color/30 format onu fade vibe verir -->
+                            <li><a href=""><i class="fa-brands fa-square-instagram bg-white/60 text-black/70 p-2 rounded-full "></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-square-whatsapp bg-white/60 text-black/70 p-2 rounded-full m-4"></i></a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="hidden min-[770px]:flex items-center text-white bg-[#D14343]  font-medium rounded-lg text-sm px-4 py-3 text-center ml-3 me-2 mb-2"><span><i class="fa-solid fa-video pr-2"></i></span><p>Live</p></button>
+                </div>
+            </nav>
+        </div>
+     </header>
+     <!-- main  -->
+     <main>
+        <!-- contents-->
+        <div class="bg-black/90">
+            <div class="mx-auto  min-[1020px]:w-[85%] mb-[50px] p-3"> 
+                <ul class="text-white font-bold text-base flex items-center justify-between ">
+                    <li class="hover:text-yellow-400"><a href="">POLITICS</a></li>
+                    <li class="hover:text-yellow-400"><a href="">ECONOMY</a></li>
+                    <li class="hover:text-yellow-400"><a href="">SOCIETY</a></li>
+                    <li class="hover:text-yellow-400"><a href="">SPORT</a></li>
+                    <li class="hover:text-yellow-400"><a href="">THIS IS INTERESTING</a></li>
+                    <li class="hover:text-yellow-400"><a href="">SHOW BUSINESS</a></li>
+                    <li class="hover:text-yellow-400"><a href="">WORLD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mx-auto  min-[1020px]:w-[85%]   bg-white">
+            <!-- slider and ads -->
+            <div id="swiper" class="flex items-center justify-between gap-5 ">
+                <!-- slider  -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img  src="img/slider 1.webp" alt="DSX gəmilərinin təqibindən sonra narkotikləri dənizə atıb qaçdılar"></div>
+                      <div class="swiper-slide"><img src="img/slider2.webp" alt=""></div>
+                      <div class="swiper-slide"><img src="img/slider3.webp" alt=""></div>
+                      <div class="swiper-slide">Slide 4</div>
+                      <div class="swiper-slide">Slide 5</div>
+                      <div class="swiper-slide">Slide 6</div>
+                      <div class="swiper-slide">Slide 7</div>
+                      <div class="swiper-slide">Slide 8</div>
+                      <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- ads -->
+                 <div id="ads" class=" w-[50%] max-[992px]:hidden">
+                    <img src="img/ads.jpg" alt="">
+                 </div>
+            </div>
+            <!-- cards -->
+             <div class="cards mt-[40px]">
+                <h1 class="text-4xl font-bold">Today</h1>
+             </div>
+        </div>
+        
+     </main>
+     <footer></footer>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
+        </script>
+
+     <script src="script.js"></script>
+ </body>
+ </html>
