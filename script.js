@@ -1,16 +1,19 @@
 const cards = document.getElementById('cards')
-getCards()
-async function getCards() {
+
+async function getCards() { 
     const res = await fetch("https://67fba7941f8b41c816847cf0.mockapi.io/bakuws")
-    const data = await res.json()
+    const data = await res.json()  //bura function fetch eksine gedir.
     showCards(data)
 }
+// kartdaki infonu ya data js yada apidan al , bunu meqsedi budu 
+// fetch is ofisant front deyirki mene flan sey lazimdi. fetchle back onu gonderir
 
 function showCards(data) {
     let code = ''
     data.map(elm => {
         code +=
-        `<div class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm text-black">
+        `
+        <div class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm text-black">
                 <a href="" id=${elm.id}>
                     <img class="rounded-t-lg h-50 object-cover w-full" src=${elm.img} alt=""/>
                 </a>
@@ -24,3 +27,4 @@ function showCards(data) {
     
     cards.innerHTML = code    //you call cards after they have been completed not before
 }
+getCards()

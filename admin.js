@@ -1,9 +1,9 @@
 const body = document.querySelector('body')
 const adminCards = document.getElementById('adminCards')
-const editCards = document.getElementById('editCards')
 const title = document.getElementById('title')
 const image = document.getElementById('image')
 const content = document.getElementById('content')
+const addModal = document.getElementById('addModal')
 
     // sehive yuklenen anda onload deyir, sildikki gorunmesin back side
     let token = localStorage.getItem('token')
@@ -51,13 +51,21 @@ const content = document.getElementById('content')
         data.forEach(elm => {
             code += 
             `
-                <p>${elm.title}</p>
-                <p>${elm.content}</p>
-                <button onclick="editNews(${elm.id})" type="button" class="w-full text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">edit</button>
-                <button onclick="deleteNews(${elm.id})" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">delete</button>
+              <div class="h-[80%] bg-white border border-gray-200 rounded-lg shadow-sm text-black ">
+                <a href="" id=${elm.id}>
+                    <img class="rounded-t-lg h-50 object-cover w-full" src=${elm.img} alt=""/>
+                </a>
+                <div class="p-2">
+                    <p class="font-bold text-[20px]">${elm.title}</p>
+                    <p class=" text-base">${elm.content}</p>
+                </div>
+                <button onclick="editNews(${elm.id})" type="button" class=" text-white bg-pink-600 hover:bg-pink-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">edit</button>
+                <button onclick="deleteNews(${elm.id})" type="button" class=" text-white bg-blue-600 hover:bg-blue-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">delete</button>
+            </div>
             `
         })
         adminCards.innerHTML = code
+        addModal.classList.add('hidden')
     }
 
     // token 3 hisseden ibaretdir.,, user info , 
@@ -110,10 +118,15 @@ const content = document.getElementById('content')
         })
     }
 
-    function editedModal() {
+    function name(params) {
         
     }
-
+   
+    function addNews(){
+        addModal.classList.remove('hidden')
+    }
+    //niye yeniden cagirma teleb edir?
+    
 
 
 
