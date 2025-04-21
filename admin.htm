@@ -12,7 +12,7 @@
         <div class=" font-bold text-4xl  w-[21%]">BAKU WS</div>
         <div class="flex items-center justify-between w-[79%]">
             <p class="font-bold text-lg">Admin Panel</p>
-            <p>Admin <span><i class="fa-regular fa-user"></i></span></p>
+            <p>Turkan Isayeva <span><i class="fa-regular fa-user"></i></span></p>
             
         </div>
     </div>
@@ -24,17 +24,18 @@
                 <li onclick="addNews()" class="py-3 px-2 border-b-2 border-[#151414]">Add News</li>
                 <!-- a href should be deleted to prevent refresing issues -->
                 <li class="py-3 px-2 border-b-2 border-[#151414]"><a href="">Category</a></li>
-                <li class="py-3 px-2 border-b-2 border-[#151414]"><a href="">Gallery</a></li>
+                <li onclick="logOut()" class="py-3 px-2 border-b-2 border-[#151414]">Log Out</li>
             </ul>
         </div>
-        <div id="adminCards" class="w-[80%] grid grid-cols-3 gap-5">
+        <div id="adminCards" class="w-[80%] bg-black/70 grid grid-cols-3 ">
             
         </div>
         <div  id="addModal" class=" hidden">
                 <div class="h-screen w-screen flex justify-center items-center bg-black/50 fixed  inset-0 ">
-                    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                        <div class="w-screen bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
+                        <div class="w-screen bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 ">
+                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8 ">
+                                <div class="text-white " onclick="closeModal()">X</div>
                                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                     Add News
                                 </h1>
@@ -52,15 +53,14 @@
                                         <input type="text" id="content" placeholder="Enter description..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
                                     </div>
                                     </div>
-                                    <button onclick="saveChanges()" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Changes</button>
+                                    <button id="buttonAdd" onclick="saveChanges()" type="button" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Changes</button>
+                                    <button id="buttonEdit" onclick="saveEdits()" type="button" class="w-full hidden text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Edits</button>
                                     
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
             </div>
-                        
         </div>
     </div>
 

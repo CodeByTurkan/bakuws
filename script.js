@@ -14,9 +14,7 @@ function showCards(data) {
         code +=
         `
         <div class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm text-black">
-                <a href="" id=${elm.id}>
-                    <img class="rounded-t-lg h-50 object-cover w-full" src=${elm.img} alt=""/>
-                </a>
+                <img class="rounded-t-lg h-50 object-cover w-full" src=${elm.img} alt=""/>
                 <div class="p-2">
                     <p class="font-bold text-[20px]">${elm.title}</p>
                 </div>
