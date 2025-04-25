@@ -23,23 +23,23 @@ const addModal = document.getElementById('addModal')
     function showOnAdmin(data) {
         let code =''
         data.forEach(elm => {
-            code += 
-            `
-            <div class="h-[70%] m-4 flex flex-col justify-between bg-white/30  text-white rounded-lg shadow-sm  ">
-               <img class="rounded-t-lg  object-cover w-full" src=${elm.img} alt=""/>
-                <div class="p-4"> 
-                    <p class="font-bold text-[20px]">${elm.title}</p>
-                    <p class=" text-base">${elm.content.slice(0,40) + '...'}</p>
-                </div>
+            code += `
+            <div class="max-w-sm m-4 flex flex-col justify-start bg-white/30 text-white rounded-lg shadow-sm">
+                <img class="rounded-t-lg object-cover w-full " src=${elm.img} alt=""/>
                 <div class="p-4">
-                    <button onclick='editNews(${JSON.stringify(elm)})' type="button" class=" text-white  font-medium bg-blue-600 hover:bg-blue-700 rounded-lg text-sm px-5 py-2.5 text-center "><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                    <button onclick="deleteNews(${elm.id})" type="button" class=" text-white bg-pink-600 hover:bg-pink-700   font-medium rounded-lg text-sm px-5 py-2.5 text-center "><i class="fa-solid fa-trash"></i> Delete</button>
+                    <p class="font-bold text-[20px] mb-2">${elm.title}</p>
+                    <p class="text-base overflow-hidden text-ellipsis whitespace-nowrap">${elm.content.slice(0,40)}...</p>
+                </div>
+                <div class="p-4 mt-auto flex justify-between gap-2">
+                    <button onclick='editNews(${JSON.stringify(elm)})' class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm px-5 py-2.5 font-medium"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                    <button onclick="deleteNews(${elm.id})" class="bg-pink-600 hover:bg-pink-700 text-white rounded-lg text-sm px-5 py-2.5 font-medium"><i class="fa-solid fa-trash"></i> Delete</button>
                 </div>
             </div>
             `
         })
         adminCards.innerHTML = code
         addModal.classList.add('hidden')
+        
     }
 
     // token 3 hisseden ibaretdir.,, user info , 
